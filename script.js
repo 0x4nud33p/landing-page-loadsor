@@ -2,12 +2,10 @@ const menuToggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".header__nav");
 const navLinks = document.querySelectorAll(".header__nav-link");
 
-// Toggle menu open/close
 menuToggle.addEventListener("click", () => {
   nav.classList.toggle("active");
 });
 
-// Close menu on nav link click + scroll
 navLinks.forEach(link => {
   link.addEventListener("click", () => {
     nav.classList.remove("active");
@@ -160,4 +158,22 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", debounce(handleScroll, 100));
     handleScroll(); // Initial call
   }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const track = document.querySelector('.carousel-track');
+    
+    if (!track) {
+        console.error('Carousel track not found.');
+        return;
+    }
+
+    // Add event listeners to pause animation on hover
+    track.addEventListener('mouseenter', () => {
+        track.style.animationPlayState = 'paused';
+    });
+
+    track.addEventListener('mouseleave', () => {
+        track.style.animationPlayState = 'running';
+    });
 });
