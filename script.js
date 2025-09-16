@@ -15,58 +15,149 @@ navLinks.forEach(link => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const trackItems = document.querySelectorAll(".track-item");
-  const truck = document.querySelector(".truck");
+  const listItems = document.querySelectorAll(".features-section__items li");
+  const cardIcon = document.getElementById("card-icon");
+  const cardHeading = document.getElementById("card-heading");
+  const cardDescription = document.getElementById("card-description");
 
-  const firstItem = trackItems[0].getBoundingClientRect();
-  const lastItem = trackItems[trackItems.length - 1].getBoundingClientRect();
+  const initialCardState = {
+    heading: "Freight Management",
+    description: "Create, assign, and track loads from one smart dashboard. Plan shipments, assign vehicles, and monitor status in real-time — all from one place.",
+    iconSrc: "./assets/icons/box.svg"
+  };
 
-  const distance = lastItem.left - firstItem.left;
-
-  truck.animate(
-    [
-      { transform: `translateX(${firstItem.left}px)` },
-      { transform: `translateX(${lastItem.left}px)` }
-    ],
-    {
-      duration: 6000,
-      iterations: Infinity,
-      easing: "linear"
+  // Function to update the card content
+  function updateCard(itemData) {
+    if (cardHeading.textContent === itemData.heading) {
+      return;
     }
-  );
-});
 
+    // Fade-out effect
+    cardIcon.style.opacity = "0";
+    cardHeading.style.opacity = "0";
+    cardDescription.style.opacity = "0";
 
-gsap.registerPlugin(ScrollTrigger);
+    // Update content after a short delay for the fade-out effect
+    setTimeout(() => {
+      cardIcon.src = itemData.iconSrc;
+      cardHeading.textContent = itemData.heading;
+      cardDescription.textContent = itemData.description;
 
-    const items = document.querySelectorAll(".features-section__items li");
-    const heading = document.querySelector(".features-section__card-heading");
-    const description = document.querySelector(".features-section__card-description");
-    const icon = document.querySelector(".features-section__icon-bg img");
+      // Fade-in effect
+      cardIcon.style.opacity = "1";
+      cardHeading.style.opacity = "1";
+      cardDescription.style.opacity = "1";
+    }, 200);
 
-    items.forEach((item) => {
-      ScrollTrigger.create({
-        trigger: item,
-        start: "top center", 
-        onEnter: () => updateCard(item),
-        onEnterBack: () => updateCard(item)
-      });
+    // Update active class on list items
+    listItems.forEach(item => item.classList.remove("active"));
+    const activeItem = Array.from(listItems).find(
+      item => item.dataset.heading === itemData.heading
+    );
+    if (activeItem) {
+      activeItem.classList.add("active");
+    }
+  }
+
+  // Handle click on a list item
+  listItems.forEach(item => {
+    item.addEventListener("click", e => {
+      e.preventDefault();
+      const itemData = {
+        heading: item.dataset.heading,
+        description: item.dataset.description,
+        iconSrc: item.dataset.iconSrc
+      };
+      updateCard(itemData);
     });
+  });
 
-    function updateCard(item) {
-      gsap.to([heading, description, icon], {
-        opacity: 0,
-        y: -20,
-        duration: 0.3,
-        onComplete: () => {
-          heading.textContent = item.dataset.title;
-          description.textContent = item.dataset.description;
-          icon.src = item.dataset.icon;
+  // Check for IntersectionObserver support
+  if ("IntersectionObserver" in window) {
+    // IntersectionObserver implementation
+    const observerOptions = {
+      root: null,
+      rootMargin: "-30% 0px -30% 0px" , // Trigger when element is in the middle 20% of the viewport
+      threshold: 0
+    };
 
-          gsap.fromTo([heading, description, icon],
-            { opacity: 0, y: 20 },
-            { opacity: 1, y: 0, duration: 0.4 }
-          );
+    const observerCallback = (entries, observer) => {
+      let activeEntry = null;
+
+      // Find the first intersecting entry
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          activeEntry = entry;
+          break;
+        }
+      }
+
+      // Update card if an intersecting entry is found
+      if (activeEntry) {
+        const itemData = {
+          heading: activeEntry.target.dataset.heading,
+          description: activeEntry.target.dataset.description,
+          iconSrc: activeEntry.target.dataset.iconSrc
+        };
+        updateCard(itemData);
+      } else {
+        // If no items are intersecting, revert to default state or last active item
+        // This is a stylistic choice. We'll revert to the initial state.
+        const lastActiveItem = document.querySelector(".features-section__items li.active");
+        if (!lastActiveItem) {
+          updateCard(initialCardState);
+        }
+      }
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    listItems.forEach(item => {
+      observer.observe(item);
+    });
+  } else {
+    // Fallback for browsers that don't support IntersectionObserver
+    let lastActiveItem = null;
+    const debounce = (func, wait) => {
+      let timeout;
+      return function(...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+      };
+    };
+
+    const handleScroll = () => {
+      const viewportCenter = window.innerHeight / 2;
+      let closestItem = null;
+      let minDistance = Infinity;
+
+      listItems.forEach(item => {
+        const rect = item.getBoundingClientRect();
+        const itemCenter = rect.top + rect.height / 2;
+        const distance = Math.abs(viewportCenter - itemCenter);
+
+        if (distance < minDistance) {
+          minDistance = distance;
+          closestItem = item;
         }
       });
-    }
+
+      if (closestItem && closestItem !== lastActiveItem) {
+        const itemData = {
+          heading: closestItem.dataset.heading,
+          description: closestItem.dataset.description,
+          iconSrc: closestItem.dataset.iconSrc
+        };
+        updateCard(itemData);
+        lastActiveItem = closestItem;
+      } else if (!closestItem) {
+        // Revert to initial state if no items are visible
+        updateCard(initialCardState);
+      }
+    };
+
+    window.addEventListener("scroll", debounce(handleScroll, 100));
+    window.addEventListener("resize", debounce(handleScroll, 100));
+    handleScroll(); // Initial call
+  }
+});
