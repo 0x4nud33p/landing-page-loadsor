@@ -2,6 +2,32 @@ const menuToggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".header__nav");
 const navLinks = document.querySelectorAll(".header__nav-link");
 
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".header__nav-link");
+
+  function onScroll() {
+    let currentSectionId = "";
+
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= 120 && rect.bottom >= 120) {
+        currentSectionId = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === `#${currentSectionId}`) {
+        link.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", onScroll);
+  onScroll();
+});
+
 menuToggle.addEventListener("click", () => {
   nav.classList.toggle("active");
 });

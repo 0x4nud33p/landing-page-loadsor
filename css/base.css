@@ -11,6 +11,7 @@
     --color-gray-secondary: #333333;
     --color-success: #29c76f;
     --color-error: #f44336;
+    --sub-title-color: #000000B2;
 
     /* Gradients */
     --gradient-bg: linear-gradient(0deg, rgba(68, 66, 215, 0.064) 0%, rgba(68, 66, 215, 0.032) 100%);
@@ -51,7 +52,7 @@ body {
     background: var(--color-primary);
     color: var(--color-dark);
     line-height: 1.6;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 .container {
@@ -78,6 +79,7 @@ img {
     line-height: 62px;
     letter-spacing: 0%;
     text-align: center;
+    color: rgba(0, 0, 0, 0.9);
 }
 
 .section__title--center {
@@ -150,23 +152,22 @@ img {
 .btn__play-small-text {
     font-size: 0.625rem;
     font-weight: 500;
-    opacity: 0.8;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
 
 .btn__play-main-text {
     font-size: 0.875rem;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .btn__arrow {
     background: var(--color-light);
     color: var(--color-dark);
-    padding: 4px;
+    padding: 2px 4px;
     margin-left: 10px;
     border-radius: var(--radius-sm);
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -233,6 +234,10 @@ img {
     z-index: 101;
 }
 
+.header__nav-link.active {
+    font-weight: 600;
+}
+
 /* ==============================
    5. Hero Section
    ============================== */
@@ -271,15 +276,17 @@ img {
 }
 
 .hero__subtitle {
-    color: var(--color-gray);
+    color: var(--sub-title-color);
     margin-bottom: 2rem;
     max-width: 500px;
-    font-family: Poppins;
-    font-weight: 400;
     font-style: Regular;
     font-size: 18px;
     line-height: 30px;
     letter-spacing: 0%;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 18px;
 }
 
 .hero__cta-group {
@@ -327,7 +334,7 @@ img {
     -webkit-backdrop-filter: blur(21px);
     position: relative;
     z-index: 2;
-    margin: -2rem auto;
+    margin: -5rem auto;
 }
 
 .hero__scroll-down-arrow::after {
@@ -343,9 +350,13 @@ img {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 1rem;
-    gap: var(--space-md);
+    margin-top: 4rem;
+    gap: var(--space-lg);
     text-align: center;
+}
+
+.specific-container {
+    max-width: 1400px;
 }
 
 .hero-stats__item {
@@ -380,112 +391,45 @@ img {
 /* ==============================
    6. Features Section (How it works)
    ============================== */
-
 .features-grid-bg {
     position: relative;
-    overflow: hidden;
-}
-
-.features-grid-bg::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    /* top grid */
-    left: 0;
-    width: 100%;
-    height: 18%;
-    background: repeating-linear-gradient(to right,
-            rgba(68, 66, 215, 0.1) 0px,
-            rgba(68, 66, 215, 0.1) 0.5px,
-            transparent 1px,
-            transparent 40px),
-        repeating-linear-gradient(to bottom,
-            rgba(68, 66, 215, 0.1) 0px,
-            rgba(68, 66, 215, 0.1) 0.5px,
-            transparent 1px,
-            transparent 20px);
-
-    /* grid perspective */
-    transform: perspective(600px) rotateX(-60deg);
-    transform-origin: bottom center;
-    z-index: 0;
-
-    /* smooth fade left & right */
-    -webkit-mask-image: linear-gradient(to right,
-            rgba(0, 0, 0, 0) 0%,
-            /* fully transparent at edges */
-            rgba(0, 0, 0, 0.3) 25%,
-            /* soft fade */
-            rgba(0, 0, 0, 1) 50%,
-            /* strongest in the center */
-            rgba(0, 0, 0, 0.3) 85%,
-            /* soft fade */
-            rgba(0, 0, 0, 0) 100%
-            /* fully transparent at edges */
-        );
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: 100% 100%;
-    mask-image: linear-gradient(to right,
-            rgba(0, 0, 0, 0) 0%,
-            rgba(0, 0, 0, 0.3) 15%,
-            rgba(0, 0, 0, 1) 50%,
-            rgba(0, 0, 0, 0.3) 85%,
-            rgba(0, 0, 0, 0) 100%);
-    mask-repeat: no-repeat;
-    mask-size: 100% 100%;
-}
-
-/* if you also want the reverse grid from the bottom, add this */
-.features-grid-bg::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    /* bottom grid */
-    left: 0;
-    width: 100%;
-    height: 18%;
-    background: repeating-linear-gradient(to right,
-            rgba(68, 66, 215, 0.1) 0px,
-            rgba(68, 66, 215, 0.1) 0.5px,
-            transparent 1px,
-            transparent 40px),
-        repeating-linear-gradient(to bottom,
-            rgba(68, 66, 215, 0.1) 0px,
-            rgba(68, 66, 215, 0.1) 0.5px,
-            transparent 1px,
-            transparent 20px);
-
-    /* flipped perspective for bottom */
-    transform: perspective(600px) rotateX(60deg);
-    transform-origin: top center;
-    z-index: 0;
-
-    /* same fade left & right */
-    -webkit-mask-image: linear-gradient(to right,
-            rgba(0, 0, 0, 0) 0%,
-            rgba(0, 0, 0, 0.3) 15%,
-            rgba(0, 0, 0, 1) 50%,
-            rgba(0, 0, 0, 0.3) 85%,
-            rgba(0, 0, 0, 0) 100%);
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: 100% 100%;
-    mask-image: linear-gradient(to right,
-            rgba(0, 0, 0, 0) 0%,
-            rgba(0, 0, 0, 0.3) 15%,
-            rgba(0, 0, 0, 1) 50%,
-            rgba(0, 0, 0, 0.3) 85%,
-            rgba(0, 0, 0, 0) 100%);
-    mask-repeat: no-repeat;
-    mask-size: 100% 100%;
-}
-
-.features-grid-bg {
     background: var(--gradient-bg);
     border-radius: var(--radius-md);
     margin: var(--space-md);
+    overflow: hidden;
+}
+
+/* Top grid */
+.grid-overlay-top {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 18%;
+    object-fit: contain;
+    transform: perspective(600px) rotateX(-60deg);
+    transform-origin: bottom center;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Bottom grid */
+.grid-overlay-bottom {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    height: 18%;
+    object-fit: contain;
+    transform: perspective(600px) rotateX(60deg);
+    transform-origin: top center;
+    z-index: 0;
+    pointer-events: none;
 }
 
 .features {
+    position: relative;
+    z-index: 1;
     padding: var(--space-lg) var(--space-sm);
     text-align: center;
     display: flex;
@@ -520,7 +464,8 @@ img {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     margin-bottom: 1rem;
-    font-style: Bold;
+    color: rgba(0, 0, 0, 0.9);
+    /* black 90% */
     font-size: 24px;
 }
 
@@ -529,11 +474,8 @@ img {
     font-weight: 400;
     color: var(--color-gray);
     margin-bottom: 1rem;
-    ;
-    font-style: Regular;
     font-size: 16px;
     line-height: 30px;
-    letter-spacing: 0%;
 }
 
 .feature-text ul {
@@ -547,18 +489,12 @@ img {
 
 .feature-text ul li {
     display: flex;
-    font-family: 'Poppins', sans-serif;
     align-items: flex-start;
-    gap: 0.5rem;
-    margin-bottom: 0.6rem;
+    gap: 1rem;
+    margin-bottom: 1rem;
     line-height: 1.5;
     font-weight: 400;
-}
-
-.feature-text ul li ul {
-    margin-top: 0.5rem;
-    margin-left: 1.5rem;
-    list-style-type: disc;
+    max-width: 90%;
 }
 
 .feature-image {
@@ -571,7 +507,6 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* overflow: visible; */
     z-index: 2;
 }
 
@@ -584,33 +519,22 @@ img {
 }
 
 .check-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.6rem;
-    font-weight: bold;
+    width: 24px;
+    height: 24px;
     flex-shrink: 0;
-    margin-top: 2px;
-    width: 24;
-    height: 24;
-    opacity: 1;
-    top: 1499.02px;
-    left: 151px;
 }
 
-/* Floating Labels — Top Placement */
+/* Floating Labels */
 .feature-label {
     position: absolute;
     top: 12px;
     left: 12px;
     background: transparent;
-    border: none;
     padding: 0.4rem 1rem;
     border-radius: 8px;
     font-size: 0.85rem;
     font-weight: 500;
     color: #333;
-    box-shadow: none;
     white-space: nowrap;
     transform: rotate(-4deg);
     z-index: 10;
@@ -680,60 +604,22 @@ img {
 /* ==============================
    8. Key Features Section (v2)
    ============================== */
-/* Make the section relative so pseudo-element works */
-#features {
+
+.features-section {
     position: relative;
     overflow: hidden;
-    z-index: 1;
+    background: var(--color-primary);
 }
 
-/* Bottom grid only */
-#features::after {
-    content: "";
+.grid-overlay-bottom-key{
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 40%;
-    background: repeating-linear-gradient(to right,
-            rgba(68, 66, 215, 0.1) 0px,
-            rgba(68, 66, 215, 0.2) 0.5px,
-            transparent 1px,
-            transparent 40px),
-        repeating-linear-gradient(to bottom,
-            rgba(68, 66, 215, 0.1) 0px,
-            rgba(68, 66, 215, 0.2) 0.5px,
-            transparent 1px,
-            transparent 20px);
-
-    /* perspective for 3D effect */
-    transform: perspective(600px) rotateX(60deg);
-    transform-origin: top center;
+    height: 50%;
+    object-fit: cover;
     z-index: 0;
-
-    /* smooth fade left & right */
-    -webkit-mask-image: linear-gradient(to right,
-            rgba(0, 0, 0, 0) 0%,
-            rgba(0, 0, 0, 0.3) 25%,
-            rgba(0, 0, 0, 1) 50%,
-            rgba(0, 0, 0, 0.3) 85%,
-            rgba(0, 0, 0, 0) 100%);
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: 100% 100%;
-    mask-image: linear-gradient(to right,
-            rgba(0, 0, 0, 0) 0%,
-            rgba(0, 0, 0, 0.3) 25%,
-            rgba(0, 0, 0, 1) 50%,
-            rgba(0, 0, 0, 0.3) 85%,
-            rgba(0, 0, 0, 0) 100%);
-    mask-repeat: no-repeat;
-    mask-size: 100% 100%;
-}
-
-.features-section {
-    position: relative;
-    overflow: visible;
-    background: var(--color-primary);
+    pointer-events: none;
 }
 
 .section__title__key {
@@ -744,6 +630,8 @@ img {
 .features-section__inner {
     margin: 0;
     padding: 0px;
+    position: relative;
+        z-index: 1;
 }
 
 .features-section__header {
@@ -797,6 +685,7 @@ img {
     width: 32px;
     height: 32px;
     display: block;
+    color: var(--color-secondary);
 }
 
 .features-section__card-heading {
@@ -1011,15 +900,16 @@ img {
 }
 
 .circular-left-features .circular-feature-item:nth-child(3) {
-    top: 55%;
-    left: 4%;
+    top: 52%;
+    left: 1%;
     transform: translateY(-50%);
 }
 
 .circular-left-features .circular-feature-item:nth-child(4) {
-    top: 80%;
-    left: 14%;
+    top: 75%;
+    left: 8%;
     transform: translateY(-50%);
+    max-width: 350px;
 }
 
 /* RIGHT SIDE arc placement */
@@ -1031,8 +921,9 @@ img {
 
 .circular-right-features .circular-feature-item:nth-child(2) {
     top: 50%;
-    right: 6%;
+    right: 4%;
     transform: translateY(-50%);
+    max-width: 320px;
 }
 
 .circular-right-features .circular-feature-item:nth-child(3) {
@@ -1090,7 +981,7 @@ img {
 .comparison-table td {
     padding: 1.2rem 1rem;
     font-size: 0.95rem;
-    border-top: 3px solid #e6e6e6;
+    border-top: 2px solid #e6e6e6;
     line-height: 1.5;
     vertical-align: middle;
 }
@@ -2115,12 +2006,19 @@ Responsive
         text-align: left;
         gap: 2rem;
     }
+    
+    .feature-text {
+        padding-bottom: 0rem;
+    }
 
-    .feature-text h3,
     .feature-text h4,
     .feature-text ul,
     .feature-text li {
         text-align: left;
+    }
+
+    .feature-text h3 {
+        text-align: center;
     }
 
     .feature-text ul li {
@@ -2203,7 +2101,7 @@ Responsive
         margin-left: 40px;
     }
 
-    .features-section__items img {
+    /* .features-section__items img {
         width: 20px;
         height: auto;
     }
@@ -2213,6 +2111,43 @@ Responsive
         flex-direction: column;
         align-items: center;
         gap: 10px;
+    } */
+
+    .features-section__items {
+        margin: 22px 0 0 0;
+        text-align: left;
+    }
+
+    .features-section__items li {
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .features-section__items img {
+        width: 20px;
+        height: auto;
+    }
+
+    .circular-left-features {
+        margin: 2rem 2rem 0 2rem;
+    }
+
+    .circular-right-features {
+        margin: 9rem 2rem 0 2rem;
+    }
+
+    .respnsive-feature-item {
+        margin-top: 2rem;
+    }
+
+    .responsive__btn__phonemockup{
+        margin: 2rem;
+    }
+
+    .comparison-section {
+        margin: 0 0.5rem 0 0.5rem;
     }
 
     .supporting-section__cta {
@@ -2224,20 +2159,27 @@ Responsive
         padding: 1rem;
     }
 
+    .text-align-center-btn {
+        text-align: center;
+        margin-left: 2rem;
+    }
+
     .footer {
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 1rem;
+        min-height: 1000px;
     }
 
     .footer__brand-text {
-        font-size: rem;
-        letter-spacing: 1rem;
+        font-size: 60px;
+        letter-spacing: 0rem;
         display: hidden;
     }
 
     .footer__container {
+        margin-top: 12rem;
         margin-left: 0;
         padding: 0;
     }
@@ -2252,7 +2194,7 @@ Responsive
     }
 
     .truck-wrapper {
-        position: static;
+        position: relative;
         width: 100%;
         height: 50px;
         margin-top: 1rem;
@@ -2272,5 +2214,170 @@ Responsive
         100% {
             transform: translateY(calc(100% + 2rem));
         }
+    }
+}
+
+
+ /* background layout responsiveness */
+/* Tablet: 768px - 1024px */
+@media (max-width: 1024px) {
+
+    .features-grid-bg::before,
+    .features-grid-bg::after {
+        height: 12%;
+        /* reduce grid height */
+        transform: perspective(400px) rotateX(-60deg);
+    }
+
+    .features-grid-bg::after {
+        transform: perspective(400px) rotateX(60deg);
+    }
+}
+
+@media (max-width: 767px) {
+
+    .features-grid-bg::before,
+    .features-grid-bg::after {
+        height: 8%;
+        /* smaller grid for mobile */
+        background: repeating-linear-gradient(to right,
+                rgba(68, 66, 215, 0.08) 0px,
+                rgba(68, 66, 215, 0.08) 0.5px,
+                transparent 1px,
+                transparent 30px),
+            repeating-linear-gradient(to bottom,
+                rgba(68, 66, 215, 0.08) 0px,
+                rgba(68, 66, 215, 0.08) 0.5px,
+                transparent 1px,
+                transparent 15px);
+        transform: perspective(300px) rotateX(-60deg);
+    }
+
+    .features-grid-bg::after {
+        transform: perspective(300px) rotateX(60deg);
+    }
+
+    /* Optional: reduce mask fade intensity */
+    .features-grid-bg::before,
+    .features-grid-bg::after {
+        -webkit-mask-image: linear-gradient(to right,
+                rgba(0, 0, 0, 0) 0%,
+                rgba(0, 0, 0, 0.2) 15%,
+                rgba(0, 0, 0, 0.8) 50%,
+                rgba(0, 0, 0, 0.2) 85%,
+                rgba(0, 0, 0, 0) 100%);
+        mask-image: linear-gradient(to right,
+                rgba(0, 0, 0, 0) 0%,
+                rgba(0, 0, 0, 0.2) 15%,
+                rgba(0, 0, 0, 0.8) 50%,
+                rgba(0, 0, 0, 0.2) 85%,
+                rgba(0, 0, 0, 0) 100%);
+    }
+}
+
+
+/* Tablet: 768px - 1024px */
+@media (max-width: 1024px) {
+    #features::after {
+        height: 25%;
+        /* reduce height */
+        background: repeating-linear-gradient(to right,
+                rgba(68, 66, 215, 0.08) 0px,
+                rgba(68, 66, 215, 0.15) 0.5px,
+                transparent 1px,
+                transparent 30px),
+            repeating-linear-gradient(to bottom,
+                rgba(68, 66, 215, 0.08) 0px,
+                rgba(68, 66, 215, 0.15) 0.5px,
+                transparent 1px,
+                transparent 15px);
+        transform: perspective(400px) rotateX(60deg);
+        /* reduce tilt for tablet */
+    }
+}
+
+/* Mobile: <768px */
+@media (max-width: 767px) {
+    #features::after {
+        height: 15%;
+        background: repeating-linear-gradient(to right,
+                rgba(68, 66, 215, 0.06) 0px,
+                rgba(68, 66, 215, 0.1) 0.5px,
+                transparent 1px,
+                transparent 20px),
+            repeating-linear-gradient(to bottom,
+                rgba(68, 66, 215, 0.06) 0px,
+                rgba(68, 66, 215, 0.1) 0.5px,
+                transparent 1px,
+                transparent 10px);
+        transform: perspective(300px) rotateX(60deg);
+
+        /* optional: reduce mask intensity for mobile */
+        -webkit-mask-image: linear-gradient(to right,
+                rgba(0, 0, 0, 0) 0%,
+                rgba(0, 0, 0, 0.2) 25%,
+                rgba(0, 0, 0, 0.8) 50%,
+                rgba(0, 0, 0, 0.2) 75%,
+                rgba(0, 0, 0, 0) 100%);
+        mask-image: linear-gradient(to right,
+                rgba(0, 0, 0, 0) 0%,
+                rgba(0, 0, 0, 0.2) 25%,
+                rgba(0, 0, 0, 0.8) 50%,
+                rgba(0, 0, 0, 0.2) 75%,
+                rgba(0, 0, 0, 0) 100%);
+    }
+}
+
+/* Tablet: 768px - 1024px */
+@media (max-width: 1024px) {
+    #benefits::after {
+        height: 10%;
+        /* reduce height for tablet */
+        background: repeating-linear-gradient(to right,
+                rgba(68, 66, 215, 0.08) 0px,
+                rgba(68, 66, 215, 0.15) 0.5px,
+                transparent 1px,
+                transparent 30px),
+            repeating-linear-gradient(to bottom,
+                rgba(68, 66, 215, 0.08) 0px,
+                rgba(68, 66, 215, 0.15) 0.5px,
+                transparent 1px,
+                transparent 15px);
+        transform: perspective(400px) rotateX(60deg);
+        /* reduce perspective */
+    }
+}
+
+/* Mobile: <768px */
+@media (max-width: 767px) {
+    #benefits::after {
+        height: 5%;
+        /* smaller grid for mobile */
+        background: repeating-linear-gradient(to right,
+                rgba(68, 66, 215, 0.06) 0px,
+                rgba(68, 66, 215, 0.1) 0.5px,
+                transparent 1px,
+                transparent 20px),
+            repeating-linear-gradient(to bottom,
+                rgba(68, 66, 215, 0.06) 0px,
+                rgba(68, 66, 215, 0.1) 0.5px,
+                transparent 1px,
+                transparent 10px);
+        transform: perspective(300px) rotateX(60deg);
+        /* reduce tilt for mobile */
+
+        /* optional: soften mask fade */
+        -webkit-mask-image: linear-gradient(to right,
+                rgba(0, 0, 0, 0) 0%,
+                rgba(0, 0, 0, 0.2) 25%,
+                rgba(0, 0, 0, 0.8) 50%,
+                rgba(0, 0, 0, 0.2) 75%,
+                rgba(0, 0, 0, 0) 100%);
+        mask-image: linear-gradient(to right,
+                rgba(0, 0, 0, 0) 0%,
+                rgba(0, 0, 0, 0.2) 25%,
+                rgba(0, 0, 0, 0.8) 50%,
+                rgba(0, 0, 0, 0.2) 75%,
+                rgba(0, 0, 0, 0) 100%);
     }
 }
