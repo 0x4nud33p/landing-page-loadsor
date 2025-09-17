@@ -1002,6 +1002,14 @@ img {
     width: 37.5%;
 }
 
+.comparison-table tr:first-child td:first-child {
+    border-top-left-radius: 12px;
+}
+
+.comparison-table tr:last-child td:first-child {
+    border-bottom-left-radius: 12px;
+}
+
 .checkmark {
     /* font-weight: bold; */
     margin-right: 8px;
@@ -2085,13 +2093,17 @@ Responsive
     }
 
     .hero__image-wrapper {
-        width: auto;
-        height: auto;
-    }
-
-    .hero__image {
+        flex: 1 1 100%;
         position: relative;
-        z-index: 2;
+        z-index: 10;
+        right: -1rem;
+        text-align: center;
+        max-width: 100%;
+    }
+    
+    .hero__image-wrapper img {
+        width: 100%;
+        height: auto;
     }
 
     .hero__whatsapp-icon {
@@ -2243,23 +2255,23 @@ Responsive
     }
 
     .features-section__items {
-        margin: 22px 0 0 0;
+        margin: 22px 0 0 6rem;
         text-align: left;
     }
 
     .features-section__items li {
-        flex-direction: row;
+        display: flex;
         align-items: center;
-        gap: 20px;
-        justify-content: center;
-        font-family: Poppins;
-        font-weight: 500;
-        letter-spacing: 0%;
+        gap: 8px;
+        white-space: nowrap;
+        font-size: 0.95rem;
+        line-height: 1.4;
     }
 
     .features-section__items img {
         width: 20px;
-        height: auto;
+        height: 20px;
+        flex-shrink: 0;
     }
 
     .circular-left-features {

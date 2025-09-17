@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
     progressBar.style.transition = "none";
     progressBar.style.width = "0%";
     setTimeout(() => {
-      progressBar.style.transition = "width 3s linear";
+      progressBar.style.transition = "width 4s linear";
       progressBar.style.width = "100%";
     }, 50);
   }
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
     currentIndex++;
     if (currentIndex >= listItems.length) currentIndex = 0;
 
-    setTimeout(showNextItem, 3000); // duration for progress bar to fill
+    setTimeout(showNextItem, 4000); // duration for progress bar to fill
   }
 
   showNextItem();
