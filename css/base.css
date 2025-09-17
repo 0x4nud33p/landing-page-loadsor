@@ -1394,16 +1394,19 @@ img {
 /* ==============================
    14. Footer
    ============================== */
-/* .footer {
+.footer {
     background: var(--gradient-footer);
     color: var(--color-light);
-    padding: 4rem 4rem;
+    /* padding: 4rem 4rem; */
+    position: relative;
+    overflow: hidden;
     border-top-left-radius: 80px;
     border-top-right-radius: 80px;
     font-family: 'Poppins', sans-serif;
     text-align: left;
-    height: 880px;
-} */
+    height: auto;
+    padding: 4rem 4rem 12rem 4rem;
+}
 
 .footer__container {
     display: flex;
@@ -1677,22 +1680,9 @@ textarea::-webkit-resizer {
     opacity: 0.8;
 }
 
-.footer {
-    position: relative;
-    background: var(--gradient-footer);
-    color: var(--color-light);
-    padding: 4rem;
-    border-top-left-radius: 80px;
-    border-top-right-radius: 80px;
-    font-family: 'Poppins', sans-serif;
-    text-align: left;
-    height: 880px;
-}
-
 .footer__brand-text {
     position: absolute;
-    bottom: 0;
-    /* at bottom of footer, ignoring inner padding */
+    bottom: -3rem;
     left: 0;
     width: 100%;
     font-size: min(18rem, 30vw);
@@ -1703,8 +1693,6 @@ textarea::-webkit-resizer {
     opacity: 0.03;
     pointer-events: none;
     user-select: none;
-    margin: 0;
-    padding: 0;
     line-height: 1;
     z-index: 0;
 }
