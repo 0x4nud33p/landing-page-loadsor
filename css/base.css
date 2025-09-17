@@ -2159,8 +2159,9 @@ Responsive
 
     .feature-text {
         padding-bottom: 0rem;
+        flex: 1 1 400px
     }
-
+    
     .feature-text h4,
     .feature-text ul,
     .feature-text li {
@@ -2204,6 +2205,10 @@ Responsive
         left: -3rem;
     }
 
+    .features-section {
+        margin-bottom: 0;
+    }
+
     .features-section__list {
         margin-left: 0;
     }
@@ -2232,16 +2237,16 @@ Responsive
     }
 
     .cta-container__title {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 
     .cta-container__header {
-        text-align: left;
+        text-align: center;
     }
 
-    .responsive__title {
-        margin-right: 20px;
-    }
+    /* .responsive__title {
+        margin-right: 10px;
+    } */
 
     .btn__play-text-block {
         display: flex;
@@ -2327,10 +2332,10 @@ Responsive
         display: hidden;
     }
 
-        .dropdown-selected {
-            height: 48px;
-            width: 100%;
-        }
+    .dropdown-selected {
+        height: 48px;
+        width: 100%;
+    }
 
     .footer__container {
         margin-top: 2rem;
@@ -2342,22 +2347,58 @@ Responsive
         padding: 1rem;
     }
 
+    .supporting-section__ordertracking h2 {
+        font-size: 1.2rem;
+    }
+
+    .track-items-wrapper {
+        margin: 2rem 0;
+
+        /* Make mask fade gentler for small screens */
+        -webkit-mask-image: linear-gradient(270deg,
+                rgba(68, 66, 215, 0) 0%,
+                #4442D7 10%,
+                #4442D7 90%,
+                rgba(68, 66, 215, 0) 100%);
+        mask-image: linear-gradient(270deg,
+                rgba(68, 66, 215, 0) 0%,
+                #4442D7 10%,
+                #4442D7 90%,
+                rgba(68, 66, 215, 0) 100%);
+    }
+
+    .supporting-section {
+        padding: 0 1rem 0 1rem;
+    }
+
     .track-items {
-        flex-direction: column;
-        gap: 1.5rem;
+        gap: 0.6rem;
+        animation: scroll-right-mobile 30s linear infinite;
     }
 
-    .truck-wrapper {
-        position: relative;
-        width: 100%;
-        height: 50px;
-        margin-top: 1rem;
+    .track-item {
+        font-size: 0.75rem;
+        padding: 0.5rem 1rem;
+        gap: 4px;
+        height: auto;
+        max-height: none;
     }
 
-    .truck {
-        height: 40px;
-        animation: drive-vertical 8s linear infinite;
-        transform: none;
+    .truck-wrapper img {
+        height: 100px;
+        max-height: none;
+        width: auto;
+    }
+    
+
+    @keyframes scroll-right-mobile {
+        0% {
+            transform: translateX(-50%);
+        }
+
+        100% {
+            transform: translateX(0);
+        }
     }
 
     /* utilities  */
