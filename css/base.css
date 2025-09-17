@@ -2270,7 +2270,12 @@ Responsive
     }
 
     .cta-container__title {
-        font-size: 1.6rem;
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 50px;
+        margin: 0;
+        text-align: center;
+        color: var(--color-gray-secondary);
     }
 
     .cta-container__header {
@@ -2315,6 +2320,13 @@ Responsive
         width: 20px;
         height: 20px;
         flex-shrink: 0;
+    }
+
+    .circular-circle img {
+        transform: translate(10%, 0%);
+        /* move upward */
+        /* or translate(-60%, -50%) to move left */
+        /* tweak values as needed */
     }
 
     .circular-left-features {
@@ -2376,6 +2388,23 @@ Responsive
         padding: 0;
     }
 
+    .footer__truck-img img {
+        width: 275px;
+        height: auto;
+        margin-bottom: 1.5rem;
+        margin-left: 2rem;
+    }
+
+    .play-btn-responsive img {
+        margin-left: 25%;
+        height: 35px;
+        width: 35px;
+    }
+
+    .btn-text-block-responsive span {
+        font-size: 1rem;
+    }
+
     .supporting-section__ordertracking {
         padding: 1rem;
     }
@@ -2418,7 +2447,7 @@ Responsive
     }
 
     .truck-wrapper img {
-        height: 100px;
+        height: 90px;
         max-height: none;
         width: auto;
     }
