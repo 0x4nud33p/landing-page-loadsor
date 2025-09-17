@@ -509,7 +509,7 @@ img {
     width: 100%;
     height: 100%;
     padding: 2rem;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 20px;
 }
 
@@ -522,29 +522,33 @@ img {
 /* Floating Labels */
 .feature-label {
     position: absolute;
-    top: 12px;
-    left: 12px;
+    top: 0.75rem;
+    left: 0.75rem;
     background: transparent;
     padding: 0.4rem 1rem;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     font-size: 0.85rem;
     font-weight: 500;
     color: #333;
     white-space: nowrap;
     transform: rotate(-4deg);
     z-index: 10;
+    max-width: 100%;
+    text-align: center;
 }
 
+/* Rotated Right Label */
 .feature-label.rotate-right {
-    top: -100px;
-    right: -110px;
+    top: -6rem;
+    right: -6.5rem;
     left: auto;
     transform: rotate(1deg);
 }
 
+/* Rotated Left Label */
 .feature-label.rotate-left {
-    top: -100px;
-    left: -110px;
+    top: -6rem;
+    left: -6.5rem;
     transform: rotate(-3deg);
 }
 
@@ -1630,6 +1634,9 @@ textarea::-webkit-resizer {
 
 .dropdown-list {
     position: absolute;
+    text-align: left;
+    padding-left: 20px;
+    list-style: none;
     top: 100%;
     left: 0;
     width: 300px;
@@ -2115,8 +2122,9 @@ Responsive
     }
 
     .hero-stats {
-        margin: var(--space-md) 0;
+        margin: 0;
         margin-bottom: 0rem;
+        gap: 0;
     }
 
     .hero-stats__value {
@@ -2128,7 +2136,7 @@ Responsive
     }
 
     .section__title {
-        font-size: 2rem;
+        font-size: 1.6rem;
         text-align: center;
         margin: 0 0 2rem 0;
         font-weight: 700;
@@ -2160,7 +2168,7 @@ Responsive
     }
 
     .feature-text h3 {
-        text-align: center;
+        text-align: left;
     }
 
     .feature-text ul li {
@@ -2173,19 +2181,27 @@ Responsive
         margin-top: 1.5rem;
     }
 
-    .feature-label {
-        left: 50%;
-        transform: translateX(-50%) rotate(0deg);
-        right: auto;
-        top: 25px;
+    .feature-image img {
+        width: 100%;
+        height: 120%;
+        padding: 0 1rem;
+        object-fit: contain;
+        border-radius: 20px;
     }
 
-    .feature-label.rotate-right,
+    .feature-label {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .feature-label.rotate-right {
+        top: -3rem;
+        right: -3.2rem;
+    }
+
     .feature-label.rotate-left {
-        left: 50%;
-        transform: translateX(-50%) rotate(0deg);
-        right: auto;
-        top: 25px;
+        top: -3rem;
+        left: -3rem;
     }
 
     .features-section__list {
@@ -2342,6 +2358,20 @@ Responsive
         height: 40px;
         animation: drive-vertical 8s linear infinite;
         transform: none;
+    }
+
+    /* utilities  */
+    
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .headings-resposive {
+
+    }
+
+    .circular-feature-item {
+        text-align: left;
     }
 
     @keyframes drive-vertical {
