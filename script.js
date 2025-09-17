@@ -206,3 +206,26 @@ document.addEventListener("DOMContentLoaded", function () {
   // Run continuously while animation runs
   setInterval(checkPassed, 100);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const dropdown = document.querySelector(".custom-dropdown");
+  const selected = dropdown.querySelector(".dropdown-selected");
+  const list = dropdown.querySelector(".dropdown-list");
+
+  selected.addEventListener("click", () => {
+    list.style.display = list.style.display === "block" ? "none" : "block";
+  });
+
+  list.querySelectorAll("li").forEach(item => {
+    item.addEventListener("click", () => {
+      selected.textContent = item.textContent;
+      list.style.display = "none";
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!dropdown.contains(e.target)) {
+      list.style.display = "none";
+    }
+  });
+});
