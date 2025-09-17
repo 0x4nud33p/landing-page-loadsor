@@ -662,7 +662,7 @@ img {
     padding: 20px;
     align-items: center;
     position: relative;
-    border-top: 5px solid #ccc;
+    border-top: none;
     border-radius: 10px;
     margin-bottom: 30px;
     box-shadow: 0 2px 10px rgba(60, 60, 60, 0.1);
@@ -684,7 +684,7 @@ img {
     width: 30px;
     height: 30px;
     display: block;
-    transition: filter 0.3s;
+    transition: filter 0.5s;
 }
 
 .features-section__items li {
@@ -697,14 +697,13 @@ img {
     color: #555;
 }
 
-
-.features-section__items li.active img {
+.features-section__card .features-section__icon-bg img {
     filter: none;
 }
 
 .features-section__items img {
-    width: 24px;
-    height: 24px;
+    width: 40px;
+    height: 40px;
     filter: grayscale(100%);
     transition: filter 0.3s;
 }
@@ -760,23 +759,6 @@ img {
     margin: 22px 0 0 60px;
 }
 
-/* .features-section__items li {
-    display: flex;
-    align-items: start;
-    gap: 30px;
-    margin-bottom: 14px;
-    font-size: 1rem;
-    color: var(--color-gray-secondary);
-} */
-
-/* .features-section__items img {
-    align-items: start;
-    color: var(--color-gray-secondary);
-    filter: grayscale(100%);
-    flex-shrink: 0;
-    display: inline-block;
-} */
-
 .features-section__image-wrapper {
     flex: 1 1 60%;
     display: flex;
@@ -802,11 +784,6 @@ img {
     transition: all 0.3s ease;
     cursor: pointer;
 }
-
-
-/* .features-section__items li.active img {
-    filter: grayscale(0%);
-} */
 
 
 .features-section__footer {
@@ -1531,7 +1508,7 @@ select.glass-input {
     background: rgba(236, 220, 220, 0.07);
     border: 1px solid rgba(236, 220, 220, 0.13);
     cursor: pointer;
-        color: #FFFFFF99;
+    color: #FFFFFF99;
 }
 
 select.glass-input option {
@@ -1543,7 +1520,7 @@ select.glass-input option {
 select.glass-input option:hover,
 select.glass-input option:checked {
     background-color: #333;
-        color: #FFFFFF99;
+    color: #FFFFFF99;
 }
 
 .footer__phone-group {
@@ -1732,6 +1709,7 @@ textarea::-webkit-resizer {
 .footer textarea::placeholder {
     color: #ffffff99;
 }
+
 .dropdown-selected {
     color: #FFFFFF99;
 }
@@ -2161,7 +2139,7 @@ Responsive
         padding-bottom: 0rem;
         flex: 1 1 400px
     }
-    
+
     .feature-text h4,
     .feature-text ul,
     .feature-text li {
@@ -2389,7 +2367,7 @@ Responsive
         max-height: none;
         width: auto;
     }
-    
+
 
     @keyframes scroll-right-mobile {
         0% {
@@ -2402,14 +2380,12 @@ Responsive
     }
 
     /* utilities  */
-    
+
     .hide-on-mobile {
         display: none;
     }
 
-    .headings-resposive {
-
-    }
+    .headings-resposive {}
 
     .circular-feature-item {
         text-align: left;

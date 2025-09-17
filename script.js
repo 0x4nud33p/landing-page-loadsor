@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
   onScroll();
 });
 
+// navbar toggle
 menuToggle.addEventListener("click", () => {
   nav.classList.toggle("active");
 });
@@ -38,6 +39,7 @@ navLinks.forEach(link => {
   });
 });
 
+// key features animation  
 document.addEventListener("DOMContentLoaded", () => {
   const listItems = document.querySelectorAll(".features-section__items li");
   const cardIcon = document.getElementById("card-icon");
@@ -74,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
     progressBar.style.transition = "none";
     progressBar.style.width = "0%";
     setTimeout(() => {
-      progressBar.style.transition = "width 2.5s linear";
+      progressBar.style.transition = "width 3s linear";
       progressBar.style.width = "100%";
     }, 50);
   }
@@ -93,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
     currentIndex++;
     if (currentIndex >= listItems.length) currentIndex = 0;
 
-    setTimeout(showNextItem, 2500); // duration for progress bar to fill
+    setTimeout(showNextItem, 3000); // duration for progress bar to fill
   }
 
   showNextItem();
