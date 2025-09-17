@@ -1607,18 +1607,25 @@ textarea::-webkit-resizer {
 }
 
 .dropdown-selected {
+    position: relative;
     height: 48px;
     background: rgba(255, 255, 255, 0.04);
     border: none;
     backdrop-filter: blur(4px);
     border-radius: 8px;
     padding: 0 1rem;
-    color: var(--color-primary, #fff);
+    color: #FFFFFF99;
     cursor: pointer;
     font-weight: 400;
     font-size: 14px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+
+    background-image: url("../assets/icons/down.svg");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 16px 16px;
 }
 
 .dropdown-list {
