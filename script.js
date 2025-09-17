@@ -186,20 +186,23 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const track = document.querySelector('.carousel-track');
-    
-    if (!track) {
-        console.error('Carousel track not found.');
-        return;
-    }
+document.addEventListener("DOMContentLoaded", function () {
+  const truck = document.querySelector(".truck-wrapper img");
+  const items = document.querySelectorAll(".track-item");
 
-    // Add event listeners to pause animation on hover
-    track.addEventListener('mouseenter', () => {
-        track.style.animationPlayState = 'paused';
+  function checkPassed() {
+    const truckRect = truck.getBoundingClientRect();
+    items.forEach(item => {
+      const itemRect = item.getBoundingClientRect();
+      // For rightward scroll: check if item's LEFT > truck's RIGHT
+      if (itemRect.left > truckRect.right) {
+        item.classList.add("passed");
+      } else {
+        item.classList.remove("passed");
+      }
     });
+  }
 
-    track.addEventListener('mouseleave', () => {
-        track.style.animationPlayState = 'running';
-    });
+  // Run continuously while animation runs
+  setInterval(checkPassed, 100);
 });
