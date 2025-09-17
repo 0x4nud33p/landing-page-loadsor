@@ -801,7 +801,8 @@ img {
 }
 
 .grid-overlay-custom {
-    bottom: 5px;
+    bottom: -32px;
+    height: 16%;
 }
 
 .circular-phone-mockup {
@@ -923,8 +924,8 @@ img {
 }
 
 .phone-btn-mockup {
-    margin-top: 50px;
-    margin-bottom: 70px;
+    margin-top: 0px;
+    margin-bottom: 100px;
 }
 
 /* ==============================
@@ -1179,7 +1180,7 @@ img {
 .supporting-section__testimonials {
     position: relative;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1320px;
     margin: 40px auto;
     padding: 20px;
 }
@@ -1657,13 +1658,12 @@ textarea::-webkit-resizer {
 
 .dropdown-list {
     position: absolute;
-    text-align: left;
-    padding-left: 20px;
+    text-align: start;
     list-style: none;
     top: 100%;
     left: 0;
     width: 300px;
-    max-height: 374px;
+    max-height: 300px;
     overflow-y: auto;
     background: #1a1a1a;
     border: 1px solid #0000001A;
@@ -2170,6 +2170,10 @@ Responsive
         font-size: 1rem;
     }
 
+    .hero-stats__item {
+        padding: 1rem 2rem;
+    }
+
     .section__title {
         font-size: 1.6rem;
         text-align: center;
@@ -2260,7 +2264,7 @@ Responsive
 
     .features-section__items {
         margin: 22px 0 0 0;
-        text-align: center;
+        text-align: left;
     }
 
     .circular-right-features {
@@ -2348,7 +2352,9 @@ Responsive
     }
 
     .comparison-section {
-        margin: 0 0.5rem 0 0.5rem;
+        margin: 0;
+        padding: 0;
+        margin-top: 30px;
     }
 
     .supporting-section__cta {
@@ -2438,6 +2444,10 @@ Responsive
     .track-items {
         gap: 0.6rem;
         animation: scroll-right-mobile 30s linear infinite;
+    }
+
+    .dropdown-list {
+        max-height: 200px;
     }
 
     .track-item {
