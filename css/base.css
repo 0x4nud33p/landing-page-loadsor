@@ -697,13 +697,9 @@ img {
     color: #555;
 }
 
-.features-section__card .features-section__icon-bg img {
-    filter: none;
-}
-
 .features-section__items img {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     filter: grayscale(100%);
     transition: filter 0.3s;
 }
@@ -933,6 +929,27 @@ img {
 /* ==============================
    10. Comparison Table
    ============================== */
+.hidden-class {
+    display: none;
+}
+
+.table-headings {
+    display: flex;
+    position: relative;
+    z-index: 10;
+    gap: 270px;
+    margin-left: 40%;
+    bottom: -3rem;
+    left: -3.4rem;
+    font-family: Poppins;
+    font-weight: 500;
+    font-style: Medium;
+    color: #000000E5;
+    font-size: 22px;
+    line-height: 30px;
+    letter-spacing: 0%;
+}
+
 .comparison-section {
     padding: 4rem 1rem;
     display: flex;
@@ -940,11 +957,14 @@ img {
 }
 
 .comparison-container {
+    padding: 15px;
     max-width: 1000px;
     width: 100%;
     background: var(--color-primary);
     border-radius: 12px;
     overflow: hidden;
+    box-shadow: 4px 4px 120px 0px #0000000F;
+    border: 1px solid #0000001A;
 }
 
 .scrollable-table-wrapper {
@@ -960,7 +980,8 @@ img {
 }
 
 .comparison-table thead {
-    background: var(--gradient-bg);
+    background: #4442D70D;
+    padding: 0px;
 }
 
 .comparison-table th {
@@ -986,7 +1007,6 @@ img {
     font-family: Poppins;
     font-style: Regular;
     color: #000000B2;
-    ;
     gap: 6px;
 }
 
@@ -995,6 +1015,18 @@ img {
     font-weight: 600;
     color: #333;
     width: 25%;
+}
+
+.comparison-table tr:first-of-type td {
+    border-top: none;
+}
+
+.first_col_row {
+    border-top-right-radius: 12px;
+}
+
+.last_col_row {
+    border-bottom-right-radius: 12px;
 }
 
 .comparison-table td:nth-child(2),
@@ -1106,7 +1138,7 @@ img {
 
 /* Track item default (before truck passes) */
 .track-item {
-    padding: 0.6rem 1.6rem;
+    padding: 0.5rem 1.6rem 0.5rem 1rem;
     box-sizing: border-box;
     font-size: 0.9rem;
     white-space: nowrap;
@@ -1114,10 +1146,12 @@ img {
     align-items: center;
     gap: 6px;
     color: var(--color-light);
-    border: 2px dotted rgba(255, 255, 255, 0.6);
-    border-radius: 20px;
-    opacity: 0.6;
+    border: 1px dashed rgba(255, 255, 255, 0.6);
     transition: all 0.3s ease-in-out;
+    width: 240;
+    height: 42;
+    opacity: 1;
+    border-radius: 40px;
 }
 
 /* Hide checkmark by default */
@@ -1129,13 +1163,12 @@ img {
 
 /* After passed (glass style + checkmark) */
 .track-item.passed {
-    background: rgba(255, 255, 255, 0.07);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border-radius: 20px;
+    border-radius: 40px;
     opacity: 1;
+    backdrop-filter: blur(14px);
+    box-shadow: 0px 4px 10px 0px #0000001A;
+    border: 1px solid #FFFFFF1A;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 100%);
 }
 
 .track-item.passed img {
@@ -1591,7 +1624,7 @@ textarea::-webkit-resizer {
 
 .custom-dropdown {
     position: relative;
-    width: 300px;
+    width: 100%;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -2391,13 +2424,44 @@ Responsive
         }
     }
 
+        .table-headings {
+            display: none;
+        }
+
     /* utilities  */
 
     .hide-on-mobile {
         display: none;
     }
 
-    .headings-resposive {}
+    /* .show-on-mobile {
+        display: block;
+    } */
+/* 
+    .show-on-mobile {
+        display: grid;
+        grid-template-columns: auto auto;
+        text-align: center;
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
+        color: #000000E5;
+        font-size: 16px;
+        margin-bottom: 1rem;
+        position: relative;
+        gap: 0;
+        min-width: 100%;
+    }
+
+    .show-on-mobile>div {
+        padding: 0.8rem;
+        border-bottom: 1px solid #e6e6e6;
+    }
+
+    .show-on-mobile .hidden-class {
+        display: none;
+    } */
+
+    /* .headings-resposive {} */
 
     .circular-feature-item {
         text-align: left;

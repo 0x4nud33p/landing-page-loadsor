@@ -42,18 +42,40 @@ navLinks.forEach(link => {
 // key features animation  
 document.addEventListener("DOMContentLoaded", () => {
   const listItems = document.querySelectorAll(".features-section__items li");
+  const featuresData = [ 
+    {
+      heading: "Transport Management",
+      description: "Manage transporters, assign vehicles, and track performance — all in one place.",
+      iconSrc: "./assets/icons/blue-truck.svg"
+    },
+    {
+      heading: "Vehicle Tracking",
+      description: "Monitor live vehicle locations, ETAs, and delays with real-time visibility.",
+      iconSrc: "./assets/icons/location-blue.svg"
+    },
+    {
+      heading: "E-Way Bill Management",
+      description: "Auto-fetch, attach, and store e-way bills to keep every trip compliant.",
+      iconSrc: "./assets/icons/E-Way-bill-blue.svg"
+    },
+    {
+      heading: "Driver & Vehicle Verification",
+      description: "Digitally verify driver IDs and vehicle documents before dispatch.",
+      iconSrc: "./assets/icons/Driver-Vehicle-Verification-blue.svg"
+    },
+    {
+      heading: "Check challan Status",
+      description: "Track challan details and status instantly to avoid penalties and delays.",
+      iconSrc: "./assets/icons/challan-blue.svg"
+    }
+  ];
+
   const cardIcon = document.getElementById("card-icon");
   const cardHeading = document.getElementById("card-heading");
   const cardDescription = document.getElementById("card-description");
   const progressBar = document.querySelector(".progress-bar");
 
-  const initialCardState = {
-    heading: "Freight Management",
-    description: "Create, assign, and track loads from one smart dashboard. Plan shipments, assign vehicles, and monitor status in real-time — all from one place.",
-    iconSrc: "./assets/icons/box.svg"
-  };
-
-  function updateCard(itemData) {
+  function updateCard(itemData, index) {
     cardIcon.style.opacity = 0;
     cardHeading.style.opacity = 0;
     cardDescription.style.opacity = 0;
@@ -68,9 +90,9 @@ document.addEventListener("DOMContentLoaded", () => {
       cardDescription.style.opacity = 1;
     }, 200);
 
+    // highlight active <li>
     listItems.forEach(item => item.classList.remove("active"));
-    const activeItem = Array.from(listItems).find(item => item.dataset.heading === itemData.heading);
-    if (activeItem) activeItem.classList.add("active");
+    if (listItems[index]) listItems[index].classList.add("active");
 
     // Reset and animate progress bar
     progressBar.style.transition = "none";
@@ -84,16 +106,11 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentIndex = 0;
 
   function showNextItem() {
-    const item = listItems[currentIndex];
-    const itemData = {
-      heading: item.dataset.heading,
-      description: item.dataset.description,
-      iconSrc: item.dataset.iconSrc
-    };
-    updateCard(itemData);
+    const itemData = featuresData[currentIndex];
+    updateCard(itemData, currentIndex);
 
     currentIndex++;
-    if (currentIndex >= listItems.length) currentIndex = 0;
+    if (currentIndex >= featuresData.length) currentIndex = 0;
 
     setTimeout(showNextItem, 4000); // duration for progress bar to fill
   }
@@ -104,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
   listItems.forEach((item, index) => {
     item.addEventListener("click", () => {
       currentIndex = index;
-      showNextItem();
+      updateCard(featuresData[index], index);
     });
   });
 });
@@ -119,7 +136,8 @@ document.addEventListener("DOMContentLoaded", function () {
     items.forEach(item => {
       const itemRect = item.getBoundingClientRect();
       // For rightward scroll: check if item's LEFT > truck's RIGHT
-      if (itemRect.left > truckRect.right) {
+      const checkpoint = truckRect.right - 65;
+      if (itemRect.left > checkpoint) {
         item.classList.add("passed");
       } else {
         item.classList.remove("passed");
