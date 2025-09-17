@@ -161,18 +161,14 @@ img {
 }
 
 .btn__arrow {
-    background: var(--color-light);
-    color: var(--color-dark);
-    padding: 2px 4px;
     margin-left: 10px;
-    border-radius: var(--radius-sm);
     font-size: 0.8rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 80;
     height: 60;
-    opacity: 1;
+    object-fit: contain;
 }
 
 /* ==============================
@@ -401,7 +397,7 @@ img {
 /* Top grid */
 .grid-overlay-top {
     position: absolute;
-    top: 10px;
+    top: 5px;
     left: 0;
     width: 100%;
     height: 18%;
@@ -415,7 +411,7 @@ img {
 /* Bottom grid */
 .grid-overlay-bottom {
     position: absolute;
-    bottom: 10px;
+    bottom: 5px;
     left: 0;
     width: 100%;
     height: 18%;
@@ -608,6 +604,7 @@ img {
     position: relative;
     overflow: hidden;
     background: var(--color-primary);
+    margin-bottom: 3rem;
 }
 
 .grid-overlay-bottom-key{
@@ -680,8 +677,8 @@ img {
 }
 
 .features-section__icon-bg img {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
     display: block;
     transition: filter 0.3s;
 }
@@ -832,7 +829,7 @@ img {
 .circular-phone-mockup {
     padding: 4rem 1rem;
     background: var(--gradient-bg);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-lg);
     margin: 2rem;
     text-align: center;
     position: relative;
@@ -990,7 +987,7 @@ img {
     font-size: 1rem;
     font-weight: 600;
     text-align: center;
-    color: #222;
+    color: #000000E5;
 }
 
 .comparison-table td {
@@ -999,11 +996,15 @@ img {
     border-top: 2px solid #e6e6e6;
     line-height: 1.5;
     vertical-align: middle;
+    font-family: 'Poppins', sans-serif;
 }
 
 .cell-with-icon {
     display: flex;
     align-items: center;
+    font-family: Poppins;
+    font-style: Regular;
+    color: #000000B2;;
     gap: 6px;
 }
 
@@ -1020,7 +1021,7 @@ img {
 }
 
 .checkmark {
-    font-weight: bold;
+    /* font-weight: bold; */
     margin-right: 8px;
 }
 

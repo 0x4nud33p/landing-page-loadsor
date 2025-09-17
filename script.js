@@ -107,6 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// truck animation 
 document.addEventListener("DOMContentLoaded", function () {
   const truck = document.querySelector(".truck-wrapper img");
   const items = document.querySelectorAll(".track-item");
@@ -128,6 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(checkPassed, 100);
 });
 
+//footer 
 document.addEventListener("DOMContentLoaded", () => {
   const dropdown = document.querySelector(".custom-dropdown");
   const selected = dropdown.querySelector(".dropdown-selected");
