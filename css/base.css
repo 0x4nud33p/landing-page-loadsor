@@ -1205,7 +1205,6 @@ img {
     flex: 1;
     display: flex;
     flex-direction: column;
-    animation: scroll-up 20s linear infinite;
 }
 
 .testimonial-card {
@@ -1274,18 +1273,37 @@ img {
     background: linear-gradient(to top, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0));
 }
 
-.carousel-column:nth-child(1) .testimonial-card {
-    box-shadow: 3px 3px 20px 0px #00000014;
+/* Scroll animation for desktop columns */
+.carousel-column.desktop-only {
+    animation: scroll-up 20s linear infinite;
 }
 
-.carousel-column:nth-child(2) .testimonial-card {
-    box-shadow: 0px 0px 20px 0px #00000014;
+.desktop-only {
+    display: flex;
 }
 
-.carousel-column:nth-child(3) .testimonial-card {
-    box-shadow: -3px 3px 20px 0px #00000014;
+.mobile-only {
+    display: none;
 }
 
+@media (max-width: 768px) {
+    .desktop-only {
+        display: none;
+    }
+
+    .mobile-only {
+        display: flex;
+    }
+}
+
+/* Scroll animation for mobile single column */
+.carousel-column-wrapper {
+    display: flex;
+    flex-direction: column;
+    animation: scroll-up-mobile 40s linear infinite;
+}
+
+/* === Keyframes === */
 @keyframes scroll-up {
     0% {
         transform: translateY(0);
@@ -1296,13 +1314,13 @@ img {
     }
 }
 
-@media (max-width: 768px) {
-    .carousel-track {
-        flex-direction: column;
+@keyframes scroll-up-mobile {
+    0% {
+        transform: translateY(0);
     }
 
-    .carousel-column {
-        animation: scroll-up 20s linear infinite;
+    100% {
+        transform: translateY(-50%);
     }
 }
 
@@ -2160,7 +2178,7 @@ Responsive
         text-align: center;
         max-width: 100%;
     }
-    
+
     .hero__image-wrapper img {
         width: 100%;
         height: auto;
@@ -2271,7 +2289,7 @@ Responsive
         flex-direction: row;
         text-align: left;
         margin: 20px;
-        gap:10px;
+        gap: 10px;
     }
 
     .features-section__icon-bg {
@@ -2433,7 +2451,7 @@ Responsive
         align-items: flex-start;
         gap: 0.5rem;
     }
-    
+
     .footer__office {
         text-align: left;
     }
@@ -2514,9 +2532,32 @@ Responsive
         }
     }
 
-        .table-headings {
-            display: none;
-        }
+    .carousel-track {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .carousel-container {
+        height: 600px;
+        overflow: hidden;
+    }
+
+    .carousel-column.desktop-only {
+        display: none;
+    }
+
+    .carousel-column.mobile-only {
+        display: flex;
+        width: 100%;
+    }
+
+    .testimonial-card {
+        margin-bottom: 24px;
+    }
+
+    .table-headings {
+        display: none;
+    }
 
     /* utilities classes */
 
