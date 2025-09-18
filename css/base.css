@@ -925,7 +925,7 @@ img {
 
 .phone-btn-mockup {
     margin-top: 0px;
-    margin-bottom: 100px;
+    margin-bottom: 120px;
 }
 
 /* ==============================
@@ -1480,7 +1480,7 @@ img {
     font-weight: 300;
     opacity: 0.6;
     margin-bottom: 0.6rem;
-    line-height: 1.6;
+    line-height: 1.3;
 }
 
 .footer i {
@@ -1787,7 +1787,7 @@ Responsive
         flex-direction: row;
         justify-content: flex-start;
         text-align: left;
-        gap: 4rem
+        gap: 12rem
     }
 
     .feature-text {
@@ -1803,6 +1803,17 @@ Responsive
 
     .supporting-section__faq {
         max-width: 1320px;
+    }
+
+    .custom-text-alignment {
+        margin-left: 23px;
+    }
+
+    .footer__office p {
+        display: flex;
+        align-items: flex-start;
+        /* or center depending on style */
+        gap: 0.5rem;
     }
 }
 
@@ -2276,9 +2287,9 @@ Responsive
     }
 
     .cta-container__title {
-        font-size: 2rem;
+        font-size: 1.6rem;
         font-weight: 700;
-        line-height: 50px;
+        line-height: 40px;
         margin: 0;
         text-align: center;
         color: var(--color-gray-secondary);
@@ -2377,6 +2388,8 @@ Responsive
         justify-content: center;
         padding: 1rem;
         min-height: 1000px;
+        border-top-left-radius: 60px;
+        border-top-right-radius: 60px;
     }
 
     .footer__brand-text {
@@ -2394,13 +2407,24 @@ Responsive
         margin-top: 2rem;
         margin-left: 0;
         padding: 0;
+        gap: 1rem;
     }
 
     .footer__truck-img img {
-        width: 275px;
+        width: 250px;
         height: auto;
         margin-bottom: 1.5rem;
         margin-left: 2rem;
+    }
+
+    .footer__office p {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .footer__office {
+        text-align: left;
     }
 
     .play-btn-responsive img {
@@ -2464,6 +2488,10 @@ Responsive
         width: auto;
     }
 
+    .mobile-section {
+        font-size: 1.6rem;
+        padding: 1rem;
+    }
 
     @keyframes scroll-right-mobile {
         0% {
@@ -2479,40 +2507,11 @@ Responsive
             display: none;
         }
 
-    /* utilities  */
+    /* utilities classes */
 
     .hide-on-mobile {
         display: none;
     }
-
-    /* .show-on-mobile {
-        display: block;
-    } */
-/* 
-    .show-on-mobile {
-        display: grid;
-        grid-template-columns: auto auto;
-        text-align: center;
-        font-weight: 600;
-        font-family: 'Poppins', sans-serif;
-        color: #000000E5;
-        font-size: 16px;
-        margin-bottom: 1rem;
-        position: relative;
-        gap: 0;
-        min-width: 100%;
-    }
-
-    .show-on-mobile>div {
-        padding: 0.8rem;
-        border-bottom: 1px solid #e6e6e6;
-    }
-
-    .show-on-mobile .hidden-class {
-        display: none;
-    } */
-
-    /* .headings-resposive {} */
 
     .circular-feature-item {
         text-align: left;
