@@ -666,8 +666,12 @@ img {
     border-top: none;
     border-radius: 10px;
     margin-bottom: 30px;
+    margin-top: 10px;
     overflow: hidden;
     box-shadow: 4px 4px 24px 0px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
 }
 
 .features-section__icon-bg {
@@ -696,12 +700,13 @@ img {
     cursor: pointer;
     transition: all 0.3s ease;
     color: #555;
+    margin-left: 40px;
 }
 
 .features-section__items img {
     width: 30px;
     height: 30px;
-    filter: grayscale(100%);
+    /* filter: grayscale(100%); */
     transition: filter 0.3s;
 }
 
@@ -716,6 +721,15 @@ img {
     transition: width linear;
 }
 
+.features-section__items li img {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.features-section__card-text {
+    padding-top: 20px;
+}
+
 .features-section__icon-bg {
     width: 64px;
     height: 64px;
@@ -725,17 +739,10 @@ img {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    margin-right: 10px;
+    margin-right: 20px;
     color: var(--color-secondary);
     border-left-width: none;
 }
-
-/* .features-section__icon-bg img {
-    width: 32px;
-    height: 32px;
-    display: block;
-    color: var(--color-secondary);
-} */
 
 .features-section__card-heading {
     font-size: 1.125rem;
@@ -773,9 +780,6 @@ img {
     display: block;
 }
 
-.features-section__card-text {
-    transition: opacity 0.2s ease-in-out;
-}
 
 .features-section__items li {
     transition: all 0.3s ease;
@@ -2264,9 +2268,10 @@ Responsive
     }
 
     .features-section__card {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row;
+        text-align: left;
         margin: 20px;
+        gap:10px;
     }
 
     .features-section__icon-bg {
@@ -2320,8 +2325,17 @@ Responsive
     }
 
     .features-section__items {
-        margin: 22px 0 0 6rem;
+        margin: 22px 0 0 0rem;
         text-align: left;
+    }
+
+    .features-section__items li img {
+        margin-left: 30px;
+        width: 36;
+        height: 36;
+        opacity: 1;
+        top: 4141px;
+        left: 177px;
     }
 
     .features-section__items li {
@@ -2341,9 +2355,6 @@ Responsive
 
     .circular-circle img {
         transform: translate(10%, 0%);
-        /* move upward */
-        /* or translate(-60%, -50%) to move left */
-        /* tweak values as needed */
     }
 
     .circular-left-features {
