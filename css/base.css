@@ -2636,7 +2636,7 @@ Responsive
     }
 
     .truck-wrapper img {
-        height: 90px;
+        height: 70px;
         max-height: none;
         width: auto;
         image-rendering: -webkit-optimize-contrast;
@@ -2670,8 +2670,9 @@ Responsive
     }
 
     .btn-padding {
-        padding: 12px 4px 12px 4px;
+        padding: 12px 8px 12px 8px;
         margin-right: 0px;
+        font-size: 0.8rem;
     }
     
     .custom-btn-styles {
