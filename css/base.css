@@ -400,7 +400,7 @@ img {
     -webkit-backdrop-filter: blur(21px);
     position: relative;
     z-index: 2;
-    margin: -5rem auto;
+    margin: -8rem auto;
 }
 
 .hero__scroll-down-arrow::after {
@@ -416,7 +416,7 @@ img {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 4rem;
+    margin-top: 10rem;
     gap: var(--space-lg);
     text-align: center;
 }
@@ -1297,7 +1297,6 @@ img {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
     margin-bottom: 24px;
     flex-shrink: 0;
-    /* Prevents cards from shrinking and fixes gaps */
 }
 
 .stars {
@@ -1398,22 +1397,32 @@ img {
 /* Responsive design */
 @media (max-width: 768px) {
     .carousel-track {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .carousel-column {
-        animation: scroll-up-seamless 20s linear infinite !important;
-    }
-
-    .carousel-container {
-        height: 400px;
-    }
-
-    .testimonial-card {
-        padding: 16px 20px;
-        margin-bottom: 16px;
-    }
+            flex-direction: column;
+            gap: 12px;
+        }
+    
+        /* Stack all testimonial cards into one flow */
+        .carousel-column {
+            flex: unset;
+            display: contents;
+            /* makes children act as direct descendants */
+            animation: none !important;
+            /* remove column-level animations */
+        }
+    
+        .testimonial-card {
+            animation: scroll-up-seamless 30s linear infinite;
+            /* apply animation to cards as one stream */
+        }
+    
+        .carousel-container {
+            height: 400px;
+        }
+    
+        .testimonial-card {
+            padding: 16px 20px;
+            margin-bottom: 16px;
+        }
 }
 
 
