@@ -2631,10 +2631,16 @@ Responsive
         max-height: none;
     }
 
+    .truck-wrapper {
+        top: 60%;
+    }
+
     .truck-wrapper img {
         height: 90px;
         max-height: none;
         width: auto;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
     }
 
     .mobile-section {
@@ -2664,8 +2670,12 @@ Responsive
     }
 
     .btn-padding {
-        padding: 12px 1px;
+        padding: 12px 4px 12px 4px;
         margin-right: 0px;
+    }
+    
+    .custom-btn-styles {
+        height: 40px;
     }
 
     /* .btn__arrow {
