@@ -39,7 +39,6 @@ navLinks.forEach(link => {
   });
 });
 
-// key features animation  
 const featureCard = document.getElementById("feature-card");
 const cardIcon = document.getElementById("card-icon");
 const cardHeading = document.getElementById("card-heading");
@@ -86,62 +85,55 @@ let autoRotateTimeout;
 function updateCard(index) {
   const itemData = features[index];
 
-  // Update content with fade
-  [cardIcon, cardHeading, cardDescription].forEach(el => el.style.opacity = 0);
+  // fade out card
+  featureCard.classList.remove("fade-in");
+  featureCard.classList.add("fade-out");
 
   setTimeout(() => {
+    // update content
     cardIcon.src = itemData.iconSrc;
     cardHeading.textContent = itemData.heading;
     cardDescription.textContent = itemData.description;
 
-    [cardIcon, cardHeading, cardDescription].forEach(el => el.style.opacity = 1);
-  }, 200);
+    // reset li states
+    listItems.forEach(item => item.classList.remove("hidden"));
+    listItems[index].classList.add("hidden");
 
-  // Reset all li items
-  listItems.forEach((item, i) => {
-    item.classList.remove("active");
-    item.style.visibility = "visible";
-    item.style.height = "";
-    item.style.margin = "";
-  });
+    // reinsert card after active li
+    listItems[index].insertAdjacentElement("afterend", featureCard);
 
-  // Hide current item
-  const activeItem = listItems[index];
-  activeItem.classList.add("active");
-  activeItem.style.visibility = "hidden";
-  activeItem.style.height = "0";
-  activeItem.style.margin = "0";
+    // fade back in
+    featureCard.classList.remove("fade-out");
+    featureCard.classList.add("fade-in");
 
-  // Move card after current item
-  activeItem.insertAdjacentElement("afterend", featureCard);
-
-  // Animate progress bar
-  progressBar.style.transition = "none";
-  progressBar.style.width = "0%";
-  setTimeout(() => {
-    progressBar.style.transition = "width 4s linear";
-    progressBar.style.width = "100%";
-  }, 50);
+    // restart progress bar
+    progressBar.style.transition = "none";
+    progressBar.style.width = "0%";
+    setTimeout(() => {
+      progressBar.style.transition = "width 4s linear";
+      progressBar.style.width = "100%";
+    }, 50);
+  }, 300);
 }
 
 function cycleFeatures() {
   autoRotateTimeout = setTimeout(() => {
     currentIndex = (currentIndex + 1) % features.length;
     updateCard(currentIndex);
-    cycleFeatures(); 
+    cycleFeatures();
   }, 4000);
 }
 
 function startAutoRotate() {
-  updateCard(currentIndex); 
-  cycleFeatures();         
+  updateCard(currentIndex);
+  cycleFeatures();
 }
 
 function stopAutoRotate() {
   clearTimeout(autoRotateTimeout);
 }
 
-// Manual click
+// manual click
 listItems.forEach((item, idx) => {
   item.addEventListener("click", () => {
     stopAutoRotate();
@@ -155,7 +147,6 @@ listItems.forEach((item, idx) => {
   });
 });
 
-// Init
 startAutoRotate();
 
 // truck animation 
