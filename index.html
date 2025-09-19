@@ -22,36 +22,36 @@
 
   <body>
     <header class="header">
-      <div class="container header__container">
-        <a href="#" class="header__logo">
-          <img src="./assets/icons/logo.svg" alt="Loadsor Logo" />
-        </a>
+  <div class="container header__container">
+    <!-- Logo (desktop), Menu (mobile) -->
+    <a href="#" class="header__logo">
+      <img src="./assets/icons/logo.svg" alt="Loadsor Logo" />
+    </a>
 
-        <button class="menu-toggle" aria-label="Toggle navigation menu">
-          <i class="fa-solid fa-bars fa-2xl" style="color: #4442d7"></i>
-        </button>
+    <button class="menu-toggle" aria-label="Toggle navigation menu">
+      <i class="fa-solid fa-bars fa-2xl"></i>
+    </button>
 
-        <nav class="header__nav">
-          <ul class="header__nav-list">
-            <li><a href="#home" class="header__nav-link">Home</a></li>
-            <li><a href="#features" class="header__nav-link">Features</a></li>
-            <li>
-              <a href="#howitworks" class="header__nav-link">How it works</a>
-            </li>
-            <li><a href="#benefits" class="header__nav-link">Benefits</a></li>
-            <li>
-              <a href="#testimonials" class="header__nav-link">Testimonials</a>
-            </li>
-            <li><a href="#whyus" class="header__nav-link">Why us?</a></li>
-            <li><a href="#FAQ" class="header__nav-link">FAQ</a></li>
-          </ul>
-        </nav>
+    <!-- Nav (center desktop only) -->
+    <nav class="header__nav">
+      <ul class="header__nav-list">
+        <li><a href="#home" class="header__nav-link">Home</a></li>
+        <li><a href="#features" class="header__nav-link">Features</a></li>
+        <li><a href="#howitworks" class="header__nav-link">How it works</a></li>
+        <li><a href="#benefits" class="header__nav-link">Benefits</a></li>
+        <li><a href="#testimonials" class="header__nav-link">Testimonials</a></li>
+        <li><a href="#whyus" class="header__nav-link">Why us?</a></li>
+        <li><a href="#FAQ" class="header__nav-link">FAQ</a></li>
+      </ul>
+    </nav>
 
-        <a href="#" class="btn btn--primary header__cta">
-          Book a Demo <img src="./assets/icons/side-arrow.svg" class="btn__arrow" />
-        </a>
-      </div>
-    </header>
+    <!-- CTA -->
+    <a href="#" class="btn btn--primary header__cta">
+      Book a Demo <img src="./assets/icons/side-arrow.svg" class="btn__arrow" />
+    </a>
+  </div>
+</header>
+
 
     <main>
       <section class="hero" id="home">
@@ -69,7 +69,7 @@
               </p>
 
               <div class="hero__cta-group">
-                <a href="#" class="btn btn--primary">
+                <a href="#" class="btn btn--primary btn-padding">
                   Book a Demo
                   <img src="./assets/icons/side-arrow.svg" class="btn__arrow" />
                 </a>
@@ -347,7 +347,7 @@
       <section class="features-section" id="features">
   <div class="features-section__inner">
     <header class="features-section__header">
-      <h2 class="section__title__key section__title--center mobile-section">
+      <h2 class="section__title__key section__title--center mobile-section-key-features">
         Key Features That Keep Your<br />Logistics Moving
       </h2>
     </header>
@@ -735,7 +735,7 @@
           />
         </section>
 
-        <div class="phone-btn-mockup responsive__btn__phonemockup">
+        <div class="phone-btn-mockup responsive__btn__phonemockup margin-top">
           <a href="#" class="btn btn--primary">
             Book a Demo
            <img src="./assets/icons/side-arrow.svg" class="btn__arrow" />
@@ -831,392 +831,296 @@
         </h2>
       </header>
 
-      <section class="supporting-section__testimonials" id="testimonials">
-  <div class="carousel-container">
-    <div class="carousel-track">
+        <section class="supporting-section__testimonials" id="testimonials">
+    <div class="carousel-container">
+        <div class="carousel-track">
+            <!-- Column 1: Moves upward -->
+            <div class="carousel-column">
+                <!-- First set -->
+                <div class="testimonial-card">
+                    <div class="stars">★★★★☆</div>
+                    <p>
+                        Loadsor has truly revolutionized the way we manage logistics.
+                        It's user-friendly and has seamlessly integrated into our
+                        operations. By simplifying logistics handling, it has saved us
+                        significant time and effort, allowing us to focus on strategic
+                        growth. Additionally, the cost savings we've achieved are
+                        remarkable. Loadsor doesn't just make logistics easier—it
+                        empowers businesses to operate smarter and more efficiently.
+                        Highly recommended!
+                    </p>
+                    <div class="testimonial-author">
+                        <img
+                            src="./assets/icons/nikhil.svg"
+                            alt="Nikhil Shah profile"
+                        />
+                        <div>
+                            <strong>Nikhil Shah</strong><br />
+                            <span>P.J. Associates</span>
+                        </div>
+                    </div>
+                </div>
 
-      <!-- === DESKTOP layout === -->
-      <!-- Column 1: Nikhil Shah -->
-      <div class="carousel-column desktop-only">
-        <div class="testimonial-card">
-          <div class="stars">★★★★☆</div>
-          <p>
-            Loadsor has truly revolutionized the way we manage logistics.
-            It's user-friendly and has seamlessly integrated into our
-            operations. By simplifying logistics handling, it has saved us
-            significant time and effort, allowing us to focus on strategic
-            growth. Additionally, the cost savings we've achieved are
-            remarkable. Loadsor doesn't just make logistics easier—it
-            empowers businesses to operate smarter and more efficiently.
-            Highly recommended!
-          </p>
-          <div class="testimonial-author">
-            <img src="./assets/icons/nikhil.svg" alt="Nikhil Shah profile" />
-            <div>
-              <strong>Nikhil Shah</strong><br />
-              <span>P.J. Associates</span>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★☆</div>
+                    <p>
+                        Loadsor has truly revolutionized the way we manage logistics.
+                        It's user-friendly and has seamlessly integrated into our
+                        operations. By simplifying logistics handling, it has saved us
+                        significant time and effort, allowing us to focus on strategic
+                        growth. Additionally, the cost savings we've achieved are
+                        remarkable. Loadsor doesn't just make logistics easier—it
+                        empowers businesses to operate smarter and more efficiently.
+                        Highly recommended!
+                    </p>
+                    <div class="testimonial-author">
+                        <img
+                            src="./assets/icons/nikhil.svg"
+                            alt="Nikhil Shah profile"
+                        />
+                        <div>
+                            <strong>Nikhil Shah</strong><br />
+                            <span>P.J. Associates</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exact duplicate set for seamless loop -->
+                <div class="testimonial-card">
+                    <div class="stars">★★★★☆</div>
+                    <p>
+                        Loadsor has truly revolutionized the way we manage logistics.
+                        It's user-friendly and has seamlessly integrated into our
+                        operations. By simplifying logistics handling, it has saved us
+                        significant time and effort, allowing us to focus on strategic
+                        growth. Additionally, the cost savings we've achieved are
+                        remarkable. Loadsor doesn't just make logistics easier—it
+                        empowers businesses to operate smarter and more efficiently.
+                        Highly recommended!
+                    </p>
+                    <div class="testimonial-author">
+                        <img
+                            src="./assets/icons/nikhil.svg"
+                            alt="Nikhil Shah profile"
+                        />
+                        <div>
+                            <strong>Nikhil Shah</strong><br />
+                            <span>P.J. Associates</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★☆</div>
+                    <p>
+                        Loadsor has truly revolutionized the way we manage logistics.
+                        It's user-friendly and has seamlessly integrated into our
+                        operations. By simplifying logistics handling, it has saved us
+                        significant time and effort, allowing us to focus on strategic
+                        growth. Additionally, the cost savings we've achieved are
+                        remarkable. Loadsor doesn't just make logistics easier—it
+                        empowers businesses to operate smarter and more efficiently.
+                        Highly recommended!
+                    </p>
+                    <div class="testimonial-author">
+                        <img
+                            src="./assets/icons/nikhil.svg"
+                            alt="Nikhil Shah profile"
+                        />
+                        <div>
+                            <strong>Nikhil Shah</strong><br />
+                            <span>P.J. Associates</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+
+            <!-- Column 2: Moves downward -->
+            <div class="carousel-column">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★☆</div>
+                    <p>
+                        Loadsor has made the logistics process much simpler and more
+                        transparent. it is easy to scale
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="./assets/icons/mahesh.svg" alt="Mahesh profile" />
+                        <div>
+                            <strong>Mahesh</strong><br />
+                            <span>Dhariwal Food</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>
+                        Loadsor has significantly simplified and enhanced the
+                        transparency of our logistics process, making it easy to
+                        scale.
+                    </p>
+                    <div class="testimonial-author">
+                        <img
+                            src="./assets/icons/pranay.svg"
+                            alt="Pranay Surana profile"
+                        />
+                        <div>
+                            <strong>Pranay Surana</strong><br />
+                            <span>Surana Wires Pvt Ltd</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>
+                        Easy to operate and save operational time and with cost
+                        effectiveness.
+                    </p>
+                    <div class="testimonial-author">
+                        <img
+                            src="./assets/icons/vasundhara.svg"
+                            alt="Vasundhara profile"
+                        />
+                        <div>
+                            <strong>Vasundhara</strong><br />
+                            <span>Trishala Laminates (P) Ltd</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Duplicate sequence for infinite scroll -->
+                <div class="testimonial-card">
+                    <div class="stars">★★★★☆</div>
+                    <p>
+                        Loadsor has made the logistics process much simpler and more
+                        transparent. it is easy to scale
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="./assets/icons/mahesh.svg" alt="Mahesh profile" />
+                        <div>
+                            <strong>Mahesh</strong><br />
+                            <span>Dhariwal Food</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>
+                        Loadsor has significantly simplified and enhanced the
+                        transparency of our logistics process, making it easy to
+                        scale.
+                    </p>
+                    <div class="testimonial-author">
+                        <img
+                            src="./assets/icons/pranay.svg"
+                            alt="Pranay Surana profile"
+                        />
+                        <div>
+                            <strong>Pranay Surana</strong><br />
+                            <span>Surana Wires Pvt Ltd</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>
+                        Easy to operate and save operational time and with cost
+                        effectiveness.
+                    </p>
+                    <div class="testimonial-author">
+                        <img
+                            src="./assets/icons/vasundhara.svg"
+                            alt="Vasundhara profile"
+                        />
+                        <div>
+                            <strong>Vasundhara</strong><br />
+                            <span>Trishala Laminates (P) Ltd</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 3: Moves downward -->
+            <div class="carousel-column">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★☆</div>
+                    <p>
+                        We are extremely satisfied with how easy and hassle-free the
+                        process has become. After using Loadsor, we've saved between
+                        20 to 50 rupees per ton, and in less than a month, we've
+                        managed to save more than what we spent on installing the
+                        Loadsor application.
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="./assets/icons/vedant.svg" alt="Vedant profile" />
+                        <div>
+                            <strong>Vedant</strong><br />
+                            <span>Singham Biocrop</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★☆</div>
+                    <p>
+                        We are extremely satisfied with how easy and hassle-free the
+                        process has become. After using Loadsor, we've saved between
+                        20 to 50 rupees per ton, and in less than a month, we've
+                        managed to save more than what we spent on installing the
+                        Loadsor application.
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="./assets/icons/vedant.svg" alt="Vedant profile" />
+                        <div>
+                            <strong>Vedant</strong><br />
+                            <span>Singham Biocrop</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Duplicate for infinite scroll -->
+                <div class="testimonial-card">
+                    <div class="stars">★★★★☆</div>
+                    <p>
+                        We are extremely satisfied with how easy and hassle-free the
+                        process has become. After using Loadsor, we've saved between
+                        20 to 50 rupees per ton, and in less than a month, we've
+                        managed to save more than what we spent on installing the
+                        Loadsor application.
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="./assets/icons/vedant.svg" alt="Vedant profile" />
+                        <div>
+                            <strong>Vedant</strong><br />
+                            <span>Singham Biocrop</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★☆</div>
+                    <p>
+                        We are extremely satisfied with how easy and hassle-free the
+                        process has become. After using Loadsor, we've saved between
+                        20 to 50 rupees per ton, and in less than a month, we've
+                        managed to save more than what we spent on installing the
+                        Loadsor application.
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="./assets/icons/vedant.svg" alt="Vedant profile" />
+                        <div>
+                            <strong>Vedant</strong><br />
+                            <span>Singham Biocrop</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <!-- duplicate for infinite scroll -->
-        <div class="testimonial-card">
-          <div class="stars">★★★★☆</div>
-          <p>
-            Loadsor has truly revolutionized the way we manage logistics.
-            It's user-friendly and has seamlessly integrated into our
-            operations. By simplifying logistics handling, it has saved us
-            significant time and effort, allowing us to focus on strategic
-            growth. Additionally, the cost savings we've achieved are
-            remarkable. Loadsor doesn't just make logistics easier—it
-            empowers businesses to operate smarter and more efficiently.
-            Highly recommended!
-          </p>
-          <div class="testimonial-author">
-            <img src="./assets/icons/nikhil.svg" alt="Nikhil Shah profile" />
-            <div>
-              <strong>Nikhil Shah</strong><br />
-              <span>P.J. Associates</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Column 2: Mahesh → Pranay → Vasundhara -->
-      <div class="carousel-column desktop-only">
-        <div class="testimonial-card">
-          <div class="stars">★★★★☆</div>
-          <p>
-            Loadsor has made the logistics process much simpler and more
-            transparent. it is easy to scale
-          </p>
-          <div class="testimonial-author">
-            <img src="./assets/icons/mahesh.svg" alt="Mahesh profile" />
-            <div>
-              <strong>Mahesh</strong><br />
-              <span>Dhariwal Food</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p>
-            Loadsor has significantly simplified and enhanced the
-            transparency of our logistics process, making it easy to
-            scale.
-          </p>
-          <div class="testimonial-author">
-            <img src="./assets/icons/pranay.svg" alt="Pranay Surana profile" />
-            <div>
-              <strong>Pranay Surana</strong><br />
-              <span>Surana Wires Pvt Ltd</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p>
-            Easy to operate and save operational time and with cost
-            effectiveness.
-          </p>
-          <div class="testimonial-author">
-            <img src="./assets/icons/vasundhara.svg" alt="Vasundhara profile" />
-            <div>
-              <strong>Vasundhara</strong><br />
-              <span>Trishala Laminates (P) Ltd</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- duplicate sequence -->
-        <div class="testimonial-card">
-          <div class="stars">★★★★☆</div>
-          <p>
-            Loadsor has made the logistics process much simpler and more
-            transparent. it is easy to scale
-          </p>
-          <div class="testimonial-author">
-            <img src="./assets/icons/mahesh.svg" alt="Mahesh profile" />
-            <div>
-              <strong>Mahesh</strong><br />
-              <span>Dhariwal Food</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p>
-            Loadsor has significantly simplified and enhanced the
-            transparency of our logistics process, making it easy to
-            scale.
-          </p>
-          <div class="testimonial-author">
-            <img src="./assets/icons/pranay.svg" alt="Pranay Surana profile" />
-            <div>
-              <strong>Pranay Surana</strong><br />
-              <span>Surana Wires Pvt Ltd</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p>
-            Easy to operate and save operational time and with cost
-            effectiveness.
-          </p>
-          <div class="testimonial-author">
-            <img src="./assets/icons/vasundhara.svg" alt="Vasundhara profile" />
-            <div>
-              <strong>Vasundhara</strong><br />
-              <span>Trishala Laminates (P) Ltd</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Column 3: Vedant -->
-      <div class="carousel-column desktop-only">
-        <div class="testimonial-card">
-          <div class="stars">★★★★☆</div>
-          <p>
-            We are extremely satisfied with how easy and hassle-free the
-            process has become. After using Loadsor, we've saved between
-            20 to 50 rupees per ton, and in less than a month, we've
-            managed to save more than what we spent on installing the
-            Loadsor application.
-          </p>
-          <div class="testimonial-author">
-            <img src="./assets/icons/vedant.svg" alt="Vedant profile" />
-            <div>
-              <strong>Vedant</strong><br />
-              <span>Singham Biocrop</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- duplicate sequence -->
-        <div class="testimonial-card">
-          <div class="stars">★★★★☆</div>
-          <p>
-            We are extremely satisfied with how easy and hassle-free the
-            process has become. After using Loadsor, we've saved between
-            20 to 50 rupees per ton, and in less than a month, we've
-            managed to save more than what we spent on installing the
-            Loadsor application.
-          </p>
-          <div class="testimonial-author">
-            <img src="./assets/icons/vedant.svg" alt="Vedant profile" />
-            <div>
-              <strong>Vedant</strong><br />
-              <span>Singham Biocrop</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="stars">★★★★☆</div>
-          <p>
-            We are extremely satisfied with how easy and hassle-free the
-            process has become. After using Loadsor, we've saved between
-            20 to 50 rupees per ton, and in less than a month, we've
-            managed to save more than what we spent on installing the
-            Loadsor application.
-          </p>
-          <div class="testimonial-author">
-            <img src="./assets/icons/vedant.svg" alt="Vedant profile" />
-            <div>
-              <strong>Vedant</strong><br />
-              <span>Singham Biocrop</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="stars">★★★★☆</div>
-          <p>
-            We are extremely satisfied with how easy and hassle-free the
-            process has become. After using Loadsor, we've saved between
-            20 to 50 rupees per ton, and in less than a month, we've
-            managed to save more than what we spent on installing the
-            Loadsor application.
-          </p>
-          <div class="testimonial-author">
-            <img src="./assets/icons/vedant.svg" alt="Vedant profile" />
-            <div>
-              <strong>Vedant</strong><br />
-              <span>Singham Biocrop</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- === MOBILE layout === -->
-      <div class="carousel-column mobile-only">
-        <div class="carousel-column-wrapper">
-          <!-- Column 1 -->
-          <div class="testimonial-card">
-            <div class="stars">★★★★☆</div>
-            <p>
-              Loadsor has truly revolutionized the way we manage logistics.
-              It's user-friendly and has seamlessly integrated into our
-              operations. By simplifying logistics handling, it has saved us
-              significant time and effort, allowing us to focus on strategic
-              growth. Additionally, the cost savings we've achieved are
-              remarkable. Loadsor doesn't just make logistics easier—it
-              empowers businesses to operate smarter and more efficiently.
-              Highly recommended!
-            </p>
-            <div class="testimonial-author">
-              <img src="./assets/icons/nikhil.svg" alt="Nikhil Shah profile" />
-              <div>
-                <strong>Nikhil Shah</strong><br />
-                <span>P.J. Associates</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card">
-            <div class="stars">★★★★☆</div>
-            <p>
-              Loadsor has truly revolutionized the way we manage logistics.
-              It's user-friendly and has seamlessly integrated into our
-              operations. By simplifying logistics handling, it has saved us
-              significant time and effort, allowing us to focus on strategic
-              growth. Additionally, the cost savings we've achieved are
-              remarkable. Loadsor doesn't just make logistics easier—it
-              empowers businesses to operate smarter and more efficiently.
-              Highly recommended!
-            </p>
-            <div class="testimonial-author">
-              <img src="./assets/icons/nikhil.svg" alt="Nikhil Shah profile" />
-              <div>
-                <strong>Nikhil Shah</strong><br />
-                <span>P.J. Associates</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Column 2 -->
-          <div class="testimonial-card">
-            <div class="stars">★★★★☆</div>
-            <p>
-              Loadsor has made the logistics process much simpler and more
-              transparent. it is easy to scale
-            </p>
-            <div class="testimonial-author">
-              <img src="./assets/icons/mahesh.svg" alt="Mahesh profile" />
-              <div>
-                <strong>Mahesh</strong><br />
-                <span>Dhariwal Food</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p>
-              Loadsor has significantly simplified and enhanced the
-              transparency of our logistics process, making it easy to
-              scale.
-            </p>
-            <div class="testimonial-author">
-              <img src="./assets/icons/pranay.svg" alt="Pranay Surana profile" />
-              <div>
-                <strong>Pranay Surana</strong><br />
-                <span>Surana Wires Pvt Ltd</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p>
-              Easy to operate and save operational time and with cost
-              effectiveness.
-            </p>
-            <div class="testimonial-author">
-              <img src="./assets/icons/vasundhara.svg" alt="Vasundhara profile" />
-              <div>
-                <strong>Vasundhara</strong><br />
-                <span>Trishala Laminates (P) Ltd</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Column 3 -->
-          <div class="testimonial-card">
-            <div class="stars">★★★★☆</div>
-            <p>
-              We are extremely satisfied with how easy and hassle-free the
-              process has become. After using Loadsor, we've saved between
-              20 to 50 rupees per ton, and in less than a month, we've
-              managed to save more than what we spent on installing the
-              Loadsor application.
-            </p>
-            <div class="testimonial-author">
-              <img src="./assets/icons/vedant.svg" alt="Vedant profile" />
-              <div>
-                <strong>Vedant</strong><br />
-                <span>Singham Biocrop</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- DUPLICATE entire set again for infinite loop -->
-          <div class="testimonial-card">
-            <div class="stars">★★★★☆</div>
-            <p>
-              Loadsor has truly revolutionized the way we manage logistics.
-              It's user-friendly and has seamlessly integrated into our
-              operations. By simplifying logistics handling, it has saved us
-              significant time and effort, allowing us to focus on strategic
-              growth. Additionally, the cost savings we've achieved are
-              remarkable. Loadsor doesn't just make logistics easier—it
-              empowers businesses to operate smarter and more efficiently.
-              Highly recommended!
-            </p>
-            <div class="testimonial-author">
-              <img src="./assets/icons/nikhil.svg" alt="Nikhil Shah profile" />
-              <div>
-                <strong>Nikhil Shah</strong><br />
-                <span>P.J. Associates</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card">
-            <div class="stars">★★★★☆</div>
-            <p>
-              Loadsor has truly revolutionized the way we manage logistics.
-              It's user-friendly and has seamlessly integrated into our
-              operations. By simplifying logistics handling, it has saved us
-              significant time and effort, allowing us to focus on strategic
-              growth. Additionally, the cost savings we've achieved are
-              remarkable. Loadsor doesn't just make logistics easier—it
-              empowers businesses to operate smarter and more efficiently.
-              Highly recommended!
-            </p>
-            <div class="testimonial-author">
-              <img src="./assets/icons/nikhil.svg" alt="Nikhil Shah profile" />
-              <div>
-                <strong>Nikhil Shah</strong><br />
-                <span>P.J. Associates</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Additional duplicates for Mahesh → Pranay → Vasundhara → Vedant as before -->
-          <!-- Repeat as needed for infinite scroll -->
-        </div>
-      </div>
     </div>
-  </div>
-</section>
-
+        </section>
 
       <div class="supporting-section__faq" id="FAQ">
         <header class="section__header">
